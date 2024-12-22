@@ -1,11 +1,9 @@
 package com.cozinhahub.cozinhahub.Services;
 
-import java.beans.JavaBean;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import com.cozinhahub.cozinhahub.Entitys.UserEntity;
@@ -25,9 +23,15 @@ public class UserService {
             userRepository.save(user);
     }
 
-    public List<UserEntity> find_by_name(String name)
+    public Optional<UserEntity> findById(Long id)
     {
-        List<UserEntity> users = userRepository.searchByNameContaining(name);
+        Optional<UserEntity> users = userRepository.findById(id);
+        return users;
+    }
+
+    public List<UserEntity> findAll()
+    {
+        List<UserEntity> users = userRepository.findAll();
         return users;
     }
 }

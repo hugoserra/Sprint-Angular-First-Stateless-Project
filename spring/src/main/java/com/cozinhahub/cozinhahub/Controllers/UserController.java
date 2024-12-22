@@ -6,16 +6,14 @@ import com.cozinhahub.cozinhahub.Entitys.UserEntity;
 import com.cozinhahub.cozinhahub.Services.UserService;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-
-
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 public class UserController {
@@ -30,10 +28,16 @@ public class UserController {
         return "Usuário registrado!";
     }
     
-    @PostMapping("get_users_by_name")
-    public ResponseEntity<List<UserEntity>> get_users_by_name(@RequestBody UserEntity request) 
+    @GetMapping("users/{id}")
+    public ResponseEntity<Optional<UserEntity>> get_users_by_name(@PathVariable Long id) 
     {
-        return ResponseEntity.ok(userService.find_by_name(request.getName()));
+        return ResponseEntity.ok(userService.findById(id));
+    }
+
+    @GetMapping("users")
+    public ResponseEntity<List<UserEntity>> get_users() 
+    {
+        return ResponseEntity.ok(userService.findAll());
     }
     
 }
