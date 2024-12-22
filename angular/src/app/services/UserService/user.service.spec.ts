@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ContadorDataService } from './contador-data.service';
+import { UserService } from './user.service';
 
-describe('ContadorDataService', () => {
-  let service: ContadorDataService;
+describe('UserServiceService', () => {
+  let service: UserService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ContadorDataService);
+    service = TestBed.inject(UserService);
   });
 
   it('should be created', () => {

@@ -1,0 +1,15 @@
+<div>
+    <div class="p-5px">Usuários:</div>
+    @for (user of users(); track $index)
+    {
+      <div class="displayer row">
+          <div class="p-5px">{{$index}}</div>
+          <div class="p-5px">{{user.name}}</div>
+          <div class="p-5px">{{user.last_name}}</div>
+          <div class="p-5px">{{user.email}}</div>
+          <div class="p-5px">{{user.age}}</div>
+      </div>
+    }
+</div>
+
+

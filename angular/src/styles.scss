@@ -5,3 +5,85 @@ body, html
   height: 100%;
   width: 100%;
 }
+
+.row
+{
+  display: flex;
+  flex-direction: row;
+}
+
+.col
+{
+  display: flex;
+  flex-direction: column;
+}
+
+$paddings: 5px, 10px, 15px, 20px, 25px, 30px, 35px, 40px;
+
+@each $tam in $paddings {
+  .p-#{$tam} {
+    padding: $tam;
+  }
+
+  .m-#{$tam} {
+    margin: $tam;
+  }
+
+  .pb-#{$tam} {
+    padding: $tam;
+  }
+
+  .mb-#{$tam} {
+    margin: $tam;
+  }
+
+  .pt-#{$tam} {
+    padding: $tam;
+  }
+
+  .mt-#{$tam} {
+    margin: $tam;
+  }
+
+  .pl-#{$tam} {
+    padding: $tam;
+  }
+
+  .ml-#{$tam} {
+    margin: $tam;
+  }
+
+  .pr-#{$tam} {
+    padding: $tam;
+  }
+
+  .mr-#{$tam} {
+    margin: $tam;
+  }
+}
+
+.center
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.displayer
+{
+  box-shadow: 1px 1px 2px 1.1px #ccc;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.btn
+{
+  width: auto;
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 5px;
+  border-radius: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+}
