@@ -15,12 +15,14 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public void register(UserEntity user)
+    public UserEntity save(UserEntity user)
     {
         Optional<UserEntity> userOptional = userRepository.findByEmail(user.getEmail());
 
         if(userOptional.isEmpty())
-            userRepository.save(user);
+            return userRepository.save(user);
+        else
+            return null;
     }
 
     public Optional<UserEntity> findById(Long id)

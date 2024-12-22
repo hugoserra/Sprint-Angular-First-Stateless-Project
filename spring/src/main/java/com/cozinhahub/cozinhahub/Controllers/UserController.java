@@ -21,11 +21,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("register")
-    public String register(@RequestBody UserEntity user) 
+    @PostMapping("user")
+    public ResponseEntity<UserEntity> save(@RequestBody UserEntity user) 
     {
-        userService.register(user);
-        return "Usuário registrado!";
+        return ResponseEntity.ok(userService.save(user));
     }
     
     @GetMapping("users/{id}")
