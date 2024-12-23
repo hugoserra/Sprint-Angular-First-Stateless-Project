@@ -33,9 +33,16 @@ export class UserService {
 
   save_user(user: object)
   {
+    console.log(user);
     this.http.post<object | null>(`${this.baseUrl}/user`, user).subscribe((user) => {
-      this.user.set(user);
+      if(user)
+      this.users.update(users => {
+        users.push(user);
+        return users;
+      });
     })
+
+
   }
 
 }

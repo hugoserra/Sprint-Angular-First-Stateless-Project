@@ -4,6 +4,7 @@ body, html
   margin: 0;
   height: 100%;
   width: 100%;
+  font-family: system-ui;
 }
 
 .row
@@ -18,47 +19,47 @@ body, html
   flex-direction: column;
 }
 
-$paddings: 5px, 10px, 15px, 20px, 25px, 30px, 35px, 40px;
+$paddings: 5, 10, 15, 20, 25, 30, 35, 40;
 
 @each $tam in $paddings {
   .p-#{$tam} {
-    padding: $tam;
+    padding: #{$tam}px;
   }
 
   .m-#{$tam} {
-    margin: $tam;
+    margin: #{$tam}px;
   }
 
   .pb-#{$tam} {
-    padding: $tam;
+    padding-bottom: #{$tam}px !important;
   }
 
   .mb-#{$tam} {
-    margin: $tam;
+    margin-bottom: #{$tam}px !important;
   }
 
   .pt-#{$tam} {
-    padding: $tam;
+    padding-top: #{$tam}px !important;
   }
 
   .mt-#{$tam} {
-    margin: $tam;
+    margin-top: #{$tam}px !important;
   }
 
   .pl-#{$tam} {
-    padding: $tam;
+    padding-left: #{$tam}px !important;
   }
 
   .ml-#{$tam} {
-    margin: $tam;
+    margin-left: #{$tam}px !important;
   }
 
   .pr-#{$tam} {
-    padding: $tam;
+    padding-right: #{$tam}px !important;
   }
 
   .mr-#{$tam} {
-    margin: $tam;
+    margin-right: #{$tam}px !important;
   }
 }
 
@@ -75,6 +76,7 @@ $paddings: 5px, 10px, 15px, 20px, 25px, 30px, 35px, 40px;
   padding: 5px;
   margin: 5px;
   border-radius: 3px;
+  user-select: none;
 }
 
 .btn
@@ -86,4 +88,12 @@ $paddings: 5px, 10px, 15px, 20px, 25px, 30px, 35px, 40px;
   margin: 5px;
   border-radius: 3px;
   font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  color: white;
+  background-color: rgb(0, 183, 255);
 }
+.btn:hover
+{
+  background-color: rgb(2, 150, 208);
+}
+
