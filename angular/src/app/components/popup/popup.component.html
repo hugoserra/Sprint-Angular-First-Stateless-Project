@@ -1,0 +1,11 @@
+
+
+<div class="popup-display" id="popup-display">
+  @if (popups.length > 0)
+  {
+    @for (popup of popups; track $index)
+    {
+      <div class="popup {{popup.type}}" [@fadeInOut] onclick="this.style.display = 'none';">{{popup.text}}</div>
+    }
+  }
+</div>
