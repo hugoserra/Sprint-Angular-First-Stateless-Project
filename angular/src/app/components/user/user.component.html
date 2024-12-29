@@ -1,0 +1,7 @@
+<div class="displayer row">
+    <div class="p-5">{{user().name}}</div>
+    <div class="p-5">{{user().last_name}}</div>
+    <div class="p-5">{{user().email}}</div>
+    <div class="p-5">{{user().age}}</div>
+    <button class="btn p-5" (click)="delete_user()">Delete user {{user().id}}</button>
+</div>

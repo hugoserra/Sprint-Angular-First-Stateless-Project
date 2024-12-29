@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -26,9 +27,15 @@ public class UserController {
     {
         return ResponseEntity.ok(userService.save(user));
     }
+
+    @DeleteMapping("user/{id}")
+    public ResponseEntity<Long> delete(@PathVariable Long id) 
+    {
+        return ResponseEntity.ok(userService.deleteById(id));
+    }
     
-    @GetMapping("users/{id}")
-    public ResponseEntity<Optional<UserEntity>> get_users_by_name(@PathVariable Long id) 
+    @GetMapping("user/{id}")
+    public ResponseEntity<Optional<UserEntity>> get_users_by_id(@PathVariable Long id) 
     {
         return ResponseEntity.ok(userService.findById(id));
     }

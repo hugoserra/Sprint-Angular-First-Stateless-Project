@@ -27,8 +27,14 @@ public class UserService {
 
     public Optional<UserEntity> findById(Long id)
     {
-        Optional<UserEntity> users = userRepository.findById(id);
-        return users;
+        Optional<UserEntity> user = userRepository.findById(id);
+        return user;
+    }
+
+    public Long deleteById(Long id)
+    {
+        userRepository.deleteById(id);
+        return id;
     }
 
     public List<UserEntity> findAll()

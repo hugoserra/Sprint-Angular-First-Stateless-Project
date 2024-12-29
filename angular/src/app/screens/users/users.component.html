@@ -4,13 +4,7 @@
     <div class="p-5">Usuários:</div>
     @for (user of users(); track $index)
     {
-      <div class="displayer row">
-          <div class="p-5">{{$index}}</div>
-          <div class="p-5">{{user.name}}</div>
-          <div class="p-5">{{user.last_name}}</div>
-          <div class="p-5">{{user.email}}</div>
-          <div class="p-5">{{user.age}}</div>
-      </div>
+      <app-user [user]="user"></app-user>
     }
 </div>
 
