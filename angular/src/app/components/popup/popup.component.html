@@ -5,7 +5,20 @@
   {
     @for (popup of popups; track $index)
     {
-      <div class="popup {{popup.type}}" [@fadeInOut] onclick="this.style.display = 'none';">{{popup.text}}</div>
+      @if(popup.type != 'confirm')
+      {
+        <div class="popup {{popup.type}}" [@fadeInOut] *ngIf="popup.visibility" (click)="hidden(popup)">{{popup.text}}</div>
+      }
+      @else
+      {
+        <div class="confirm" [@fadeInOut] *ngIf="popup.visibility" (click)="hidden(popup)">
+          <div class="confirm-text">{{popup.text}}</div>
+          <div class="row">
+            <button class="btn" (click)="popup?.action(); hidden(popup)">Sim</button>
+            <button class="btn" (click)="hidden(popup)">Não</button>
+          </div>
+        </div>
+      }
     }
   }
 </div>

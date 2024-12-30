@@ -18,7 +18,9 @@ export class UserComponent
 
   delete_user()
   {
-    this.userService.delete_user(this.user().id);
-    this.popupService.set_popup(`Usuário: ${this.user().name}, Deletado!`, 3000, "delete");
+    this.popupService.set_popup(`Deseja deletar o usuário ${this.user().name}?`, 1, "confirm", true, () => {
+      this.userService.delete_user(this.user().id);
+      this.popupService.set_popup(`Usuário ${this.user().name} Deletado!`, 3000, "delete");
+    });
   }
 }
